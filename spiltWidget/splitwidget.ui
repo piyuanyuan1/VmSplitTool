@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>splitWidget</class>
+ <widget class="QWidget" name="splitWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1372</width>
+    <height>932</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VmSplitTool</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../image.qrc">
+    <normaloff>:/icon.png</normaloff>:/icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWIdget
+{
+	background-color: rgb(230,230,230);
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="generateButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>generater</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	background-color: rgb(255, 255, 255,0);
+	border: 0px solid rgb(0,0,0);
+	border-radius: 15px;
+	color: rgb(0,0,0);
+	font: 75 9pt &quot;等线&quot;;
+}
+QWidget:hover
+{
+	font-size:10pt;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0);
+}
+QWidget:pressed 
+{
+	font-size:8pt;
+}</string>
+       </property>
+       <property name="text">
+        <string>Generate</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="tagEditButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>90</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>generater</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	background-color: rgb(255, 255, 255,0);
+	border: 0px solid rgb(0,0,0);
+	border-radius: 15px;
+	color: rgb(0,0,0);
+	font: 75 9pt &quot;等线&quot;;
+}
+QWidget:hover
+{
+	font-size:10pt;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0);
+}
+QWidget:pressed 
+{
+	font-size:8pt;
+}</string>
+       </property>
+       <property name="text">
+        <string>TagEdit</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="formatButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>90</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>format convert</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	background-color: rgb(255, 255, 255,0);
+	border: 0px solid rgb(0,0,0);
+	border-radius: 15px;
+	color: rgb(0,0,0);
+	font: 75 9pt &quot;等线&quot;;
+}
+QWidget:hover
+{
+	font-size:10pt;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0);
+}
+QWidget:pressed 
+{
+	font-size:8pt;
+}</string>
+       </property>
+       <property name="text">
+        <string>Format</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QListWidget" name="startListWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>起始时间</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QWidget
+{
+	background-color: rgb(60,60,60);
+	border: 0px solid rgb(255,255,255);
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-right-width:0px;
+	color: #fff;
+	font: 75 8pt &quot;微软雅黑&quot;;
+}
+QWidget:hover
+{
+	background-color:rgb(100,100,100);
+}
+QListWidget::item:hover
+{
+	background:rgb(40,40,40);
+}
+QListWidget::item:selected 
+{
+	border:2px solid #fff;
+	border-radius:7px;
+}
+QListWidget::item
+{
+	color:#ff8200;
+}</string>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="autoScroll">
+          <bool>true</bool>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DragDrop</enum>
+         </property>
+         <property name="resizeMode">
+          <enum>QListView::Fixed</enum>
+         </property>
+         <property name="selectionRectVisible">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="endListWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>结束时间</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QWidget
+{
+	background-color: rgb(60,60,60);
+	border-top: 0px solid rgb(255,255);
+	border-bottom: 2px solid rgb(0,0,0);
+	color: #fff;
+	font: 75 8pt &quot;微软雅黑&quot;;
+}
+QWidget:hover
+{
+	background-color:rgb(100,100,100);
+}
+QListWidget::item:hover
+{
+	background:rgb(40,40,40);
+}
+QListWidget::item:selected 
+{
+	border:2px solid #fff;
+	border-radius:7px;
+}
+QListWidget::item
+{
+	color:#ff8200;
+}</string>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="autoScroll">
+          <bool>true</bool>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DragDrop</enum>
+         </property>
+         <property name="resizeMode">
+          <enum>QListView::Fixed</enum>
+         </property>
+         <property name="selectionRectVisible">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="tagListWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>标签</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QWidget
+{
+	background-color: rgb(60,60,60);
+	border: 0px solid rgb(0,0,0);
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-left-width:0px;
+	color: #fff;
+	font: 75 8pt &quot;微软雅黑&quot;;
+}
+QWidget:hover
+{
+	background-color:rgb(100,100,100);
+}
+QListWidget::item:hover
+{
+	background:rgb(40,40,40);
+}
+QListWidget::item:selected 
+{
+	border:2px solid #fff;
+	border-radius:7px;
+}
+QListWidget::item
+{
+	color:#00df43;
+}</string>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="autoScroll">
+          <bool>true</bool>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::DoubleClicked</set>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DragDrop</enum>
+         </property>
+         <property name="resizeMode">
+          <enum>QListView::Fixed</enum>
+         </property>
+         <property name="selectionRectVisible">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="splitButton">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>40</y>
+          <width>201</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>1000</width>
+          <height>1000</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>split video</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget
+{
+	background-color: rgb(255, 255, 255,0);
+	border: 2px solid rgb(0,0,0);
+	border-radius: 20px;
+	color: rgb(0,0,0);
+	font: 75 11pt &quot;等线&quot;;
+}
+QWidget:hover
+{
+	font-size:12pt;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0);
+	border-color:#000;
+}
+QWidget:pressed 
+{
+	font-size:9pt;
+}</string>
+        </property>
+        <property name="text">
+         <string>split</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="editSlider">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>341</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSlider::handle
+{
+	background-color: rgb(0,0,0,0);
+	border:2px solid #000;
+	border-radius:7px;
+}
+QSlider::handle:hover
+{
+	background:#000;
+}
+</string>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QWidget" name="playWidget" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(60,60,60);
+border: 0px solid rgb(0,0,0);
+border-radius:7px;
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QSlider" name="horizontalSlider">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QSlider::handle
+{
+	background-color: rgb(0,0,0,0);
+	border:2px solid #000;
+	border-radius:7px;
+}
+QSlider::handle:hover
+{
+	background:#000;
+}</string>
+           </property>
+           <property name="maximum">
+            <number>10000</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="tickPosition">
+            <enum>QSlider::NoTicks</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QPushButton" name="openButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton
+{
+	background-color:rgb(40,40,40,0);
+	color: rgb(0,0,0);
+	font: 10pt &quot;等线&quot;;
+	text-align: left;
+	border:0px solid #fff;
+	border-radius:0px;
+	padding-left:10px;
+}
+QPushButton:hover
+{
+	color: rgb(255, 255, 255);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(60, 60, 60, 255), stop:1 rgba(255, 255, 255, 0));
+}
+QPushButton:pressd
+{
+	background-color:rgb(40,40,40,0);
+	color: rgb(0,0,0);
+	font-size:9px;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>No Media</string>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="progressLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget
+{
+	background-color:rgb(40,40,40,0);
+	color: rgb(0,0,0);
+	font: 10pt &quot;等线&quot;;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>0/0 s</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="debugLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	background-color:rgb(40,40,40,0);
+	color: gray;
+	font: 9pt &quot;等线&quot;;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+  <action name="actionClear">
+   <property name="text">
+    <string>清空列表</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>删除项目</string>
+   </property>
+  </action>
+  <action name="actionMerge">
+   <property name="text">
+    <string>合并项目</string>
+   </property>
+  </action>
+  <action name="actionDetect">
+   <property name="text">
+    <string>矫正数值</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;detect the vidoe fragment&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionDivide">
+   <property name="text">
+    <string>分裂项目</string>
+   </property>
+  </action>
+  <action name="actionEdit">
+   <property name="text">
+    <string>编辑项目</string>
+   </property>
+  </action>
+  <action name="actionLoadSave">
+   <property name="text">
+    <string>载入存档</string>
+   </property>
+  </action>
+  <action name="actionDetectFill">
+   <property name="text">
+    <string>自动分割</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;detect the vidoe fragment&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
